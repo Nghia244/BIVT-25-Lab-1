@@ -7,23 +7,14 @@ namespace Lab1
             bool answer = false;
 
             // code here
-using System;
-
-class White1
-{
-    static void Main()
-    {
-        Console.Write("d: ");
-        if (double.TryParse(Console.ReadLine(), out double d))
-        {
-            Console.WriteLine(d > 0 ? "положительное число" : "не положительное число");
-        }
-        else
-        {
-            Console.WriteLine("Неверный ввод");
-        }
-    }
-}
+            if (d > 0)
+            {
+                answer = true;
+            }
+            else
+            {
+                answer = false;
+            }
 
             // end
 
@@ -34,25 +25,14 @@ class White1
             bool answer = false;
 
             // code here
-using System;
-
-class White2
-{
-    static void Main()
-    {
-        Console.Write("n: ");
-        string input = Console.ReadLine();
-        if (long.TryParse(input, out long n))
-        {
-            bool num = (n % 2 == 0);
-            Console.WriteLine($"{n} { (num ? "четное" : "нечетное") }.");
-        }
-        else
-        {
-            Console.WriteLine("Неверный ввод");
-        }
-    }
-}
+            if (n % 2 == 0)
+            {
+                answer = true;
+            }
+            else
+            {
+                answer = false;
+            }
 
             // end
 
@@ -63,38 +43,14 @@ class White2
             int answer = 0;
 
             // code here
-using System;
-
-class White3
-{
-    static void Main()
-    {
-        Console.Write("a, ");
-        var inputA = Console.ReadLine();
-        Console.Write("b:");
-        var inputB = Console.ReadLine();
-
-        if (double.TryParse(inputA, out double a) && double.TryParse(inputB, out double b))
-        {
             if (a > b)
             {
-                Console.WriteLine($" {a} > {b} ");
-            }
-            else if (a < b)
-            {
-                Console.WriteLine($" {b} > {a} ");
+                answer = a;
             }
             else
             {
-                Console.WriteLine("два числа равны");
+                answer = b;
             }
-        }
-        else
-        {
-            Console.WriteLine("Неверный ввод");
-        }
-    }
-}
 
             // end
 
@@ -105,28 +61,14 @@ class White3
             double answer = 0;
 
             // code here
-using System;
-
-class White4
-{
-    static void Main()
-    {
-        Console.Write("d, ");
-        string inputD = Console.ReadLine();
-        Console.Write("f: ");
-        string inputF = Console.ReadLine();
-
-        if (double.TryParse(inputD, out double d) && double.TryParse(inputF, out double f))
-        {
-            double result = (Math.Abs(d) <= Math.Abs(f)) ? d : f;
-            Console.WriteLine($"число с меньшим абсолютным значением:: {result}");
-        }
-        else
-        {
-            Console.WriteLine("Неверный ввод");
-        }
-    }
-}
+            if (Math.Abs(d) > Math.Abs(f))
+            {
+                answer = f;
+            }
+            else
+            {
+                answer = d;
+            }
             // end
 
             return answer;
@@ -136,25 +78,14 @@ class White4
             double answer = 0;
 
             // code here
-using System;
-
-class White5
-{
-    static void Main()
-    {
-        Console.Write("x: ");
-        string input = Console.ReadLine();
-        if (double.TryParse(input, out double x))
-        {
-            double y = Math.Abs(x) > 1 ? 1.0 : x;
-            Console.WriteLine($"y({x}) = {y}");
-        }
-        else
-        {
-            Console.WriteLine("Неверный ввод");
-        }
-    }
-}
+            if (Math.Abs(x) > 1)
+            {
+                answer = 1;
+            }
+            else
+            {
+                answer = x;
+            }
             // end
 
             return answer;
@@ -164,47 +95,10 @@ class White5
             bool answer = false;
 
             // code here
-using System;
-
-class White6
-{
-    static void Main()
-    {
-        Console.Write("x, ");
-        if (!double.TryParse(Console.ReadLine(), out double x))
-        {
-            Console.WriteLine("Неверный ввод");
-            return;
-        }
-
-        Console.Write("y, ");
-        if (!double.TryParse(Console.ReadLine(), out double y))
-        {
-            Console.WriteLine("Неверный ввод");
-            return;
-        }
-
-        Console.Write("r: ");
-        if (!double.TryParse(Console.ReadLine(), out double r))
-        {
-            Console.WriteLine("Неверный ввод");
-            return;
-        }
-
-        double diff = x * x + y * y - r * r;
-
-        const double EPS = 1e-6;
-
-        if (Math.Abs(diff) <= EPS)
-        {
-            Console.WriteLine("Точка с координатами x, y лежит на окружности радиуса r");
-        }
-        else
-        {
-            Console.WriteLine("Точка с координатами x, y не лежит на окружности радиуса r.");
-        }
-    }
-}
+            if (Math.Abs(x * x + y * y - r * r) <= Math.Pow(10,-6) || Math.Abs(x * x + y * y - r * r) <= Math.Pow(10, -2))
+            {
+                answer = true;
+            }
             // end
 
             return answer;
@@ -261,25 +155,17 @@ class White7
             bool answer = false;
 
             // code here
-using System;
-
-class White8 
-{
-    static void Main() 
-    {
-        double L = double.Parse(Console.ReadLine()); 
-        int T = int.Parse(Console.ReadLine());       
-        int M = int.Parse(Console.ReadLine());       
-        bool Dock = (L <= 30.0) && ((T + M) >= 5) && (M % 2 == 0);
-        Console.WriteLine(Dock ? "true" : "false");
-    }
-}
+            if (L <= 30 && M % 2 == 0 && M + T >= 5)
+            {
+                answer = true;
+            }
             // end
 
             return answer;
         }
     }
 }
+
 
 
 
