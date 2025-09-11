@@ -109,43 +109,14 @@ namespace Lab1
             bool answer = false;
 
             // code here
-using System;
-
-class White7
-{
-    static void Main(string[] args)
-    {
-        Console.Write("n: ");
-        string input = Console.ReadLine();
-        if (!int.TryParse(input, out int n))
-        {
-            Console.WriteLine("Неверный ввод");
-            return;
-        }
-
-        bool answer = false;
-
-        long s = (long)n * n;
-
-        if (s - n > 2L * n)
-        {
-            answer = false;
-        }
-        else
-        {
-            if (n % 2 == 0)
+            int s = n * n;
+            if (s - n > 2 * n)
             {
-                answer = false;
+                if (n % 2 == 0)
+                {
+                    answer = true;
+                }
             }
-            else
-            {
-                answer = true;
-            }
-        }
-
-        Console.WriteLine(answer ? "true" : "false");
-    }
-}
             // end
 
             return answer;
@@ -165,6 +136,7 @@ class White7
         }
     }
 }
+
 
 
 
