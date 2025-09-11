@@ -261,11 +261,24 @@ class White7
             bool answer = false;
 
             // code here
+using System;
 
+class White8 
+{
+    static void Main() 
+    {
+        double L = double.Parse(Console.ReadLine()); 
+        int T = int.Parse(Console.ReadLine());       
+        int M = int.Parse(Console.ReadLine());       
+        bool Dock = (L <= 30.0) && ((T + M) >= 5) && (M % 2 == 0);
+        Console.WriteLine(Dock ? "true" : "false");
+    }
+}
             // end
 
             return answer;
         }
     }
 }
+
 
