@@ -37,7 +37,9 @@
 
             // code here
             int sum = a + b;
-            double tbc = (a + b) / 2.0;
+            int absA = Math.Abs(a);
+            int absB = Math.Abs(b);
+            double tbc = (absA + absB) / 2.0;
             if (sum > tbc)
             {
                 answer = true;
@@ -159,3 +161,4 @@
     }
 
 }
+
