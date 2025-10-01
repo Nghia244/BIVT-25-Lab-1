@@ -7,6 +7,10 @@
             bool answer = false;
 
             // code here
+            if (Math.Abs(d) >= 1)
+            {
+                answer = true;
+            }
 
             // end
 
@@ -17,6 +21,11 @@
             bool answer = false;
 
             // code here
+             double tbc = (d + f) / 2;
+            if (tbc >= 0)
+            {
+                answer = true;
+            }
 
             // end
 
@@ -27,6 +36,12 @@
             bool answer = false;
 
             // code here
+            int sum = a + b;
+            double tbc = (a + b) / 2.0;
+            if (sum > tbc)
+            {
+                answer = true;
+            }
 
             // end
 
@@ -37,6 +52,18 @@
             int answer = 0;
 
             // code here
+            int max = a;
+            if(b>max)
+            {
+                max = b;
+            }
+
+            if (c > max)
+            {
+                max = c;
+            }
+
+            answer = max;
 
             // end
 
@@ -47,6 +74,14 @@
             double answer = 0;
 
             // code here
+            if (Math.Abs(x) > 1)
+            {
+                answer = 0;
+            }
+            else
+            {
+                answer = x * x - 1;
+            }
 
             // end
 
@@ -57,6 +92,10 @@
             bool answer = false;
 
             // code here
+            if (y <= 1 + x && y <= 1 - x && y >= 0)
+            {
+                answer = true;
+            }
 
             // end
 
@@ -68,6 +107,14 @@
             bool answer = true;
 
             // code here
+            if(n<0)
+            {
+                answer = false;
+            }
+            else if (n % 2 == 0)
+            {
+                answer = false;
+            }
 
             // end
 
@@ -78,10 +125,37 @@
             bool answer = false;
 
             // code here
+            double sleep,wake=14;
+            bool canwake = false;
+            for (int i = 1; i <= X; i++)
+            {
+                wake = wake - 1;
+                if (wake == 7)
+                {
+                    canwake = true;
+                    break;
+                }
+            }
+
+            if (X % 2 == 0)
+            {
+                sleep = 4-((X / 2) * Y) / 60.0;
+            }
+            else
+            {
+                sleep=4-Y*((X/2)+1)/60.0;
+            }
+
+            if (canwake == true && (sleep >= -2 && sleep <= 0))
+            {
+                answer = true;
+            }
+
 
             // end
 
             return answer;
         }
     }
+
 }
